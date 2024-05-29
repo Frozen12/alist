@@ -1,7 +1,7 @@
-FROM xhofe/alist:latest
-LABEL MAINTAINER="i@nn.ci"
+FROM curlimages/curl:latest
 WORKDIR /opt/alist/
 
+RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install /opt/alist/ 
 EXPOSE 5244
 
-CMD [ "./alist", "server", "--no-prefix" ]
+CMD ["sh", "-c", "./alist admin set Jrnia@High && ./alist 
