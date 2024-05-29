@@ -1,10 +1,10 @@
 FROM alpine:3.20.0
-RUN apk --no-cache add curl bash tar
+RUN apk --no-cache add curl bash tar wget
 WORKDIR /opt/alist/
 
-RUN curl -L https://github.com/xhofe/alist/releases/latest/download/alist-linux-musl-$ARCH.tar.gz -o /opt/alist/alist.tar.gz
+RUN https://github.com/alist-org/alist/releases/download/v3.35.0/alist-linux-amd64.tar.gz
 # Unzip the downloaded file to get the executable file:
-RUN tar -zxvf alist.tar.gz && chmod +x alist
+RUN tar -zxvf alist-linux-amd64.tar.gz && chmod +x alist
 
 
 
