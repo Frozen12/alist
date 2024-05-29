@@ -1,11 +1,7 @@
 #!/bin/bash
 
-chown -R ${PUID}:${PGID} /opt/alist/
+# Set the admin credentials
+/opt/alist/alist admin set Jenia@High
 
-umask ${UMASK}
-
-if [ "$1" = "version" ]; then
-  ./alist version
-else
-  exec su-exec ${PUID}:${PGID} ./alist server --no-prefix
-fi
+# Start the application
+/opt/alist/alist start
