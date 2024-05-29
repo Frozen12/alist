@@ -5,4 +5,4 @@ WORKDIR /opt/alist/
 RUN curl -fsSL "https://alist.nn.ci/v3.sh" | bash -s install /opt/alist/ 
 EXPOSE 5244
 
-CMD ["sh", "-c", "./alist admin set Jenia@High && ./alist start"]
+CMD ["./alist admin set Jenia@High && ./alist start"]
